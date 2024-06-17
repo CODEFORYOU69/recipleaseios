@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gpj-Fa-2To">
+                                <rect key="frame" x="5" y="64" width="383" height="749"/>
+                                <string key="image">DALL·E 2024-06-29 00.54.06 - Create a logo for an app named 'Reciplease'. The logo should feature a modern and clean design, with a focus on cooking and recipes. Include an image </string>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gpj-Fa-2To" secondAttribute="bottom" constant="5" id="9ND-9A-cj4"/>
+                            <constraint firstItem="Gpj-Fa-2To" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WDh-vp-i12"/>
+                            <constraint firstItem="Gpj-Fa-2To" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="WEc-Lm-Xoa"/>
+                            <constraint firstItem="Gpj-Fa-2To" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XOU-P1-6jT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gpj-Fa-2To" secondAttribute="trailing" constant="5" id="eCE-bb-hza"/>
+                            <constraint firstItem="Gpj-Fa-2To" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="lrx-vV-TcO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image width="1024" height="1024">
+            <string key="name">DALL·E 2024-06-29 00.54.06 - Create a logo for an app named 'Reciplease'. The logo should feature a modern and clean design, with a focus on cooking and recipes. Include an image </string>
+        </image>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
