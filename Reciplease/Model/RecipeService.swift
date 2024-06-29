@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-
+// recipefetch
 struct RecipeService {
     let apiKey = "f6225413"
     let apiId = "d414e37698fba8f4599bd1335e297d90    "
@@ -30,6 +30,7 @@ struct RecipeService {
         }
     }
 }
+
 
 struct RecipeResponse: Decodable {
     let hits: [Hit]
