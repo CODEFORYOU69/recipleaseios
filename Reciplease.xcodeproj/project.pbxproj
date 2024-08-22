@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0F20D72C73D595002FA01B /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F20D62C73D595002FA01B /* NetworkServiceTests.swift */; };
+		3E0F20DB2C73DA44002FA01B /* ConfigurationTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F20DA2C73DA44002FA01B /* ConfigurationTemplate.swift */; };
+		3E0F20DE2C74F512002FA01B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F20DD2C74F512002FA01B /* NetworkService.swift */; };
+		3E0F20E22C754337002FA01B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F20E12C754337002FA01B /* Recipe.swift */; };
+		3E0F20E42C7546EE002FA01B /* RecipeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F20E32C7546EE002FA01B /* RecipeServiceTests.swift */; };
+		3E0F20E62C754786002FA01B /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F20E52C754786002FA01B /* CoreDataManagerTests.swift */; };
+		3E0F20E72C7550BB002FA01B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E92FBF42C208C4E00989B12 /* Main.storyboard */; };
 		3E3E36362C51506D005463FC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E36352C51506D005463FC /* Configuration.swift */; };
 		3E3E36382C515346005463FC /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E36372C515346005463FC /* RecipeDetailViewController.swift */; };
 		3E3E363A2C517C25005463FC /* UIImageView+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E36392C517C25005463FC /* UIImageView+LoadImage.swift */; };
-		3E3E363C2C51A005005463FC /* CoreDataManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E363B2C51A005005463FC /* CoreDataManagerDelegate.swift */; };
 		3E3E36412C51A1F6005463FC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E36402C51A1F6005463FC /* CoreDataManager.swift */; };
 		3E3E36432C51AD4C005463FC /* FavoriteRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E36422C51AD4C005463FC /* FavoriteRecipeCell.swift */; };
 		3E4D14F92C58F9FA00A3835A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E4D14F82C58F9FA00A3835A /* LaunchScreen.storyboard */; };
 		3E4D14FB2C59308100A3835A /* ModernTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D14FA2C59308100A3835A /* ModernTableViewCell.swift */; };
+		3E7E9ACF2C779EF20067586F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E9ACE2C779EF20067586F /* LoadingView.swift */; };
 		3E87E31B2C56AA4300D843E2 /* UIColor+AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E87E31A2C56AA4300D843E2 /* UIColor+AppTheme.swift */; };
 		3E92FBEF2C208C4E00989B12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FBEE2C208C4E00989B12 /* AppDelegate.swift */; };
 		3E92FBF12C208C4E00989B12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FBF02C208C4E00989B12 /* SceneDelegate.swift */; };
@@ -22,8 +29,6 @@
 		3E92FBF92C208C4E00989B12 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FBF72C208C4E00989B12 /* Reciplease.xcdatamodeld */; };
 		3E92FBFB2C208C4F00989B12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E92FBFA2C208C4F00989B12 /* Assets.xcassets */; };
 		3E92FC092C208C4F00989B12 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC082C208C4F00989B12 /* RecipleaseTests.swift */; };
-		3E92FC132C208C4F00989B12 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC122C208C4F00989B12 /* RecipleaseUITests.swift */; };
-		3E92FC152C208C4F00989B12 /* RecipleaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC142C208C4F00989B12 /* RecipleaseUITestsLaunchTests.swift */; };
 		3E92FC272C2D6CE600989B12 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC262C2D6CE600989B12 /* SearchViewController.swift */; };
 		3E92FC292C2D6CFD00989B12 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC282C2D6CFD00989B12 /* FavoriteViewController.swift */; };
 		3E92FC2B2C2DA0B100989B12 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC2A2C2DA0B100989B12 /* RecipeService.swift */; };
@@ -38,24 +43,24 @@
 			remoteGlobalIDString = 3E92FBEA2C208C4E00989B12;
 			remoteInfo = Reciplease;
 		};
-		3E92FC0F2C208C4F00989B12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E92FBE32C208C4E00989B12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E92FBEA2C208C4E00989B12;
-			remoteInfo = Reciplease;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0F20D62C73D595002FA01B /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		3E0F20DA2C73DA44002FA01B /* ConfigurationTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTemplate.swift; sourceTree = "<group>"; };
+		3E0F20DD2C74F512002FA01B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3E0F20E12C754337002FA01B /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		3E0F20E32C7546EE002FA01B /* RecipeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTests.swift; sourceTree = "<group>"; };
+		3E0F20E52C754786002FA01B /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		3E3E36352C51506D005463FC /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3E3E36372C515346005463FC /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		3E3E36392C517C25005463FC /* UIImageView+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImage.swift"; sourceTree = "<group>"; };
-		3E3E363B2C51A005005463FC /* CoreDataManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerDelegate.swift; sourceTree = "<group>"; };
 		3E3E36402C51A1F6005463FC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3E3E36422C51AD4C005463FC /* FavoriteRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeCell.swift; sourceTree = "<group>"; };
 		3E4D14F82C58F9FA00A3835A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E4D14FA2C59308100A3835A /* ModernTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernTableViewCell.swift; sourceTree = "<group>"; };
+		3E7E9ACD2C76AB380067586F /* Reciplease v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Reciplease v2.xcdatamodel"; sourceTree = "<group>"; };
+		3E7E9ACE2C779EF20067586F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3E87E31A2C56AA4300D843E2 /* UIColor+AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppTheme.swift"; sourceTree = "<group>"; };
 		3E92FBEB2C208C4E00989B12 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E92FBEE2C208C4E00989B12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +71,6 @@
 		3E92FBFF2C208C4F00989B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E92FC042C208C4F00989B12 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E92FC082C208C4F00989B12 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
-		3E92FC0E2C208C4F00989B12 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E92FC122C208C4F00989B12 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
-		3E92FC142C208C4F00989B12 /* RecipleaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3E92FC262C2D6CE600989B12 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3E92FC282C2D6CFD00989B12 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		3E92FC2A2C2DA0B100989B12 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
@@ -90,13 +92,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E92FC0B2C208C4F00989B12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,7 +100,6 @@
 			children = (
 				3E92FBED2C208C4E00989B12 /* Reciplease */,
 				3E92FC072C208C4F00989B12 /* RecipleaseTests */,
-				3E92FC112C208C4F00989B12 /* RecipleaseUITests */,
 				3E92FBEC2C208C4E00989B12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,7 +109,6 @@
 			children = (
 				3E92FBEB2C208C4E00989B12 /* Reciplease.app */,
 				3E92FC042C208C4F00989B12 /* RecipleaseTests.xctest */,
-				3E92FC0E2C208C4F00989B12 /* RecipleaseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,8 +122,6 @@
 				3E92FC222C2D5C7900989B12 /* Model */,
 				3E92FBFF2C208C4F00989B12 /* Info.plist */,
 				3E92FBF72C208C4E00989B12 /* Reciplease.xcdatamodeld */,
-				3E3E363B2C51A005005463FC /* CoreDataManagerDelegate.swift */,
-				3E3E36402C51A1F6005463FC /* CoreDataManager.swift */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -139,26 +130,20 @@
 			isa = PBXGroup;
 			children = (
 				3E92FC082C208C4F00989B12 /* RecipleaseTests.swift */,
+				3E0F20D62C73D595002FA01B /* NetworkServiceTests.swift */,
+				3E0F20E32C7546EE002FA01B /* RecipeServiceTests.swift */,
+				3E0F20E52C754786002FA01B /* CoreDataManagerTests.swift */,
 			);
 			path = RecipleaseTests;
-			sourceTree = "<group>";
-		};
-		3E92FC112C208C4F00989B12 /* RecipleaseUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3E92FC122C208C4F00989B12 /* RecipleaseUITests.swift */,
-				3E92FC142C208C4F00989B12 /* RecipleaseUITestsLaunchTests.swift */,
-			);
-			path = RecipleaseUITests;
 			sourceTree = "<group>";
 		};
 		3E92FC222C2D5C7900989B12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3E0F20DD2C74F512002FA01B /* NetworkService.swift */,
 				3E92FC2A2C2DA0B100989B12 /* RecipeService.swift */,
-				3E3E36352C51506D005463FC /* Configuration.swift */,
-				3E3E36392C517C25005463FC /* UIImageView+LoadImage.swift */,
-				3E87E31A2C56AA4300D843E2 /* UIColor+AppTheme.swift */,
+				3E3E36402C51A1F6005463FC /* CoreDataManager.swift */,
+				3E0F20E12C754337002FA01B /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,10 +151,13 @@
 		3E92FC232C2D5C8400989B12 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E3E36422C51AD4C005463FC /* FavoriteRecipeCell.swift */,
+				3E4D14FA2C59308100A3835A /* ModernTableViewCell.swift */,
 				3E92FBF42C208C4E00989B12 /* Main.storyboard */,
 				3E92FBF02C208C4E00989B12 /* SceneDelegate.swift */,
 				3E92FBEE2C208C4E00989B12 /* AppDelegate.swift */,
 				3E4D14F82C58F9FA00A3835A /* LaunchScreen.storyboard */,
+				3E7E9ACE2C779EF20067586F /* LoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,7 +168,6 @@
 				3E92FC262C2D6CE600989B12 /* SearchViewController.swift */,
 				3E92FC282C2D6CFD00989B12 /* FavoriteViewController.swift */,
 				3E3E36372C515346005463FC /* RecipeDetailViewController.swift */,
-				3E3E36422C51AD4C005463FC /* FavoriteRecipeCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,8 +175,11 @@
 		3E92FC252C2D5CB400989B12 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				3E3E36352C51506D005463FC /* Configuration.swift */,
+				3E0F20DA2C73DA44002FA01B /* ConfigurationTemplate.swift */,
+				3E87E31A2C56AA4300D843E2 /* UIColor+AppTheme.swift */,
+				3E3E36392C517C25005463FC /* UIImageView+LoadImage.swift */,
 				3E92FBFA2C208C4F00989B12 /* Assets.xcassets */,
-				3E4D14FA2C59308100A3835A /* ModernTableViewCell.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -201,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E92FC182C208C4F00989B12 /* Build configuration list for PBXNativeTarget "Reciplease" */;
 			buildPhases = (
+				3E0F20DC2C73DD51002FA01B /* Run Script */,
 				3E92FBE72C208C4E00989B12 /* Sources */,
 				3E92FBE82C208C4E00989B12 /* Frameworks */,
 				3E92FBE92C208C4E00989B12 /* Resources */,
@@ -235,24 +226,6 @@
 			productReference = 3E92FC042C208C4F00989B12 /* RecipleaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3E92FC0D2C208C4F00989B12 /* RecipleaseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E92FC1E2C208C4F00989B12 /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */;
-			buildPhases = (
-				3E92FC0A2C208C4F00989B12 /* Sources */,
-				3E92FC0B2C208C4F00989B12 /* Frameworks */,
-				3E92FC0C2C208C4F00989B12 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3E92FC102C208C4F00989B12 /* PBXTargetDependency */,
-			);
-			name = RecipleaseUITests;
-			productName = RecipleaseUITests;
-			productReference = 3E92FC0E2C208C4F00989B12 /* RecipleaseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -267,10 +240,6 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					3E92FC032C208C4F00989B12 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 3E92FBEA2C208C4E00989B12;
-					};
-					3E92FC0D2C208C4F00989B12 = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 3E92FBEA2C208C4E00989B12;
 					};
@@ -294,7 +263,6 @@
 			targets = (
 				3E92FBEA2C208C4E00989B12 /* Reciplease */,
 				3E92FC032C208C4F00989B12 /* RecipleaseTests */,
-				3E92FC0D2C208C4F00989B12 /* RecipleaseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,6 +275,7 @@
 				3E4D14F92C58F9FA00A3835A /* LaunchScreen.storyboard in Resources */,
 				3E92FBFB2C208C4F00989B12 /* Assets.xcassets in Resources */,
 				3E92FBF62C208C4E00989B12 /* Base in Resources */,
+				3E0F20E72C7550BB002FA01B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +286,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E92FC0C2C208C4F00989B12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E0F20DC2C73DD51002FA01B /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! -f \"${SRCROOT}/Reciplease/utils/Configuration.swift\" ]; then\n    cp \"${SRCROOT}/Reciplease/utils/ConfigurationTemplate.swift\" \"${SRCROOT}/Reciplease/utils/Configuration.swift\"\nfi\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E92FBE72C208C4E00989B12 /* Sources */ = {
@@ -335,11 +318,14 @@
 				3E92FBF92C208C4E00989B12 /* Reciplease.xcdatamodeld in Sources */,
 				3E3E363A2C517C25005463FC /* UIImageView+LoadImage.swift in Sources */,
 				3E92FC2B2C2DA0B100989B12 /* RecipeService.swift in Sources */,
+				3E7E9ACF2C779EF20067586F /* LoadingView.swift in Sources */,
 				3E3E36382C515346005463FC /* RecipeDetailViewController.swift in Sources */,
+				3E0F20E22C754337002FA01B /* Recipe.swift in Sources */,
 				3E3E36362C51506D005463FC /* Configuration.swift in Sources */,
-				3E3E363C2C51A005005463FC /* CoreDataManagerDelegate.swift in Sources */,
+				3E0F20DB2C73DA44002FA01B /* ConfigurationTemplate.swift in Sources */,
 				3E92FBEF2C208C4E00989B12 /* AppDelegate.swift in Sources */,
 				3E3E36432C51AD4C005463FC /* FavoriteRecipeCell.swift in Sources */,
+				3E0F20DE2C74F512002FA01B /* NetworkService.swift in Sources */,
 				3E87E31B2C56AA4300D843E2 /* UIColor+AppTheme.swift in Sources */,
 				3E92FC292C2D6CFD00989B12 /* FavoriteViewController.swift in Sources */,
 				3E92FC272C2D6CE600989B12 /* SearchViewController.swift in Sources */,
@@ -352,16 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E0F20D72C73D595002FA01B /* NetworkServiceTests.swift in Sources */,
 				3E92FC092C208C4F00989B12 /* RecipleaseTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E92FC0A2C208C4F00989B12 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E92FC132C208C4F00989B12 /* RecipleaseUITests.swift in Sources */,
-				3E92FC152C208C4F00989B12 /* RecipleaseUITestsLaunchTests.swift in Sources */,
+				3E0F20E62C754786002FA01B /* CoreDataManagerTests.swift in Sources */,
+				3E0F20E42C7546EE002FA01B /* RecipeServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,11 +352,6 @@
 			isa = PBXTargetDependency;
 			target = 3E92FBEA2C208C4E00989B12 /* Reciplease */;
 			targetProxy = 3E92FC052C208C4F00989B12 /* PBXContainerItemProxy */;
-		};
-		3E92FC102C208C4F00989B12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3E92FBEA2C208C4E00989B12 /* Reciplease */;
-			targetProxy = 3E92FC0F2C208C4F00989B12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -526,8 +501,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,8 +530,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -611,42 +584,6 @@
 			};
 			name = Release;
 		};
-		3E92FC1F2C208C4F00989B12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VRA2ZFJM88;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.younesouasmi.RecipleaseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Reciplease;
-			};
-			name = Debug;
-		};
-		3E92FC202C208C4F00989B12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VRA2ZFJM88;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.younesouasmi.RecipleaseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Reciplease;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -677,15 +614,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E92FC1E2C208C4F00989B12 /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E92FC1F2C208C4F00989B12 /* Debug */,
-				3E92FC202C208C4F00989B12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -711,9 +639,10 @@
 		3E92FBF72C208C4E00989B12 /* Reciplease.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				3E7E9ACD2C76AB380067586F /* Reciplease v2.xcdatamodel */,
 				3E92FBF82C208C4E00989B12 /* Reciplease.xcdatamodel */,
 			);
-			currentVersion = 3E92FBF82C208C4E00989B12 /* Reciplease.xcdatamodel */;
+			currentVersion = 3E7E9ACD2C76AB380067586F /* Reciplease v2.xcdatamodel */;
 			path = Reciplease.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

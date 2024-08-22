@@ -1,15 +1,28 @@
 import UIKit
+import SafariServices
+
+
+protocol FavoriteUpdateDelegate: AnyObject {
+    func didAddFavorite(recipe: Recipe)
+    func didRemoveFavorite(recipe: Recipe)
+}
 
 class RecipeDetailViewController: UIViewController {
     
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var ingredientsTextView: UITextView!
+    @IBOutlet weak var caloriesLabel: UILabel!
+
+    @IBOutlet weak var instructionsButton: UIButton!
+
     
     var recipes: [Recipe] = []
     var recipe: Recipe?
     var currentIndex: Int = 0
     let activityIndicator = UIActivityIndicatorView(style: .medium)
+    
+    weak var delegate: FavoriteUpdateDelegate?
     
     private let coreDataManager = CoreDataManager.shared
     private var isSaved = false
@@ -23,12 +36,12 @@ class RecipeDetailViewController: UIViewController {
         updateUI()
         checkIfRecipeIsSaved()
         coreDataManager.delegate = self
+        setupButtons()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goBack))
-
     }
     
     @objc private func goBack() {
-            navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,8 +66,34 @@ class RecipeDetailViewController: UIViewController {
         ingredientsTextView.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         
         activityIndicator.color = UIColor(red: 0.4, green: 0.6, blue: 0.8, alpha: 1.0)
+        instructionsButton.setTitle("View Instructions", for: .normal)
+              instructionsButton.addTarget(self, action: #selector(openInstructions), for: .touchUpInside)
     }
-    
+    private func setupButtons() {
+            instructionsButton.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0) // Light gray background
+            instructionsButton.setTitleColor(UIColor(red: 0.7, green: 0.6, blue: 0.8, alpha: 1.0), for: .normal) // Pale violet text color
+        instructionsButton.layer.cornerRadius = 8
+        instructionsButton.layer.borderWidth = 1.0
+
+        instructionsButton.layer.shadowColor = UIColor.black.cgColor // Shadow color
+        instructionsButton.layer.shadowOffset = CGSize(width: 0, height: 2) // Shadow offset for perspective
+        instructionsButton.layer.shadowRadius = 2
+        instructionsButton.layer.shadowOpacity = 0.2 // Shadow opacity
+        instructionsButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        instructionsButton.addTarget(self, action: #selector(animateButton(_:)), for: .touchUpInside)
+        
+
+    }
+
+    @objc private func animateButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }) { _ in
+            UIView.animate(withDuration: 0.1) {
+                sender.transform = CGAffineTransform.identity
+            }
+        }
+    }
     private func setupActivityIndicator() {
         view.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -67,12 +106,10 @@ class RecipeDetailViewController: UIViewController {
     private func setupNavigationButtons() {
         let saveButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(toggleSaveRecipe))
         
-        // Utilisez un UIBarButtonItem flexible pour créer de l'espace
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
-        // Configurez la barre de navigation
-        navigationItem.leftBarButtonItems = [flexibleSpace] // Espace flexible à gauche
-        navigationItem.rightBarButtonItems = [saveButton] // Bouton de sauvegarde à droite
+        navigationItem.leftBarButtonItems = [flexibleSpace]
+        navigationItem.rightBarButtonItems = [saveButton]
         
         updateSaveButtonAppearance()
     }
@@ -119,37 +156,32 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @objc private func toggleSaveRecipe() {
-        let currentRecipe: Recipe
-        if let singleRecipe = recipe {
-            currentRecipe = singleRecipe
-        } else if !recipes.isEmpty && currentIndex >= 0 && currentIndex < recipes.count {
-            currentRecipe = recipes[currentIndex]
-        } else {
-            return
-        }
+        guard let currentRecipe = getCurrentRecipe() else { return }
         
         if isSaved {
             coreDataManager.deleteRecipe(currentRecipe)
+            delegate?.didRemoveFavorite(recipe: currentRecipe)
+            print("Recipe removed from favorites: \(currentRecipe.label)")
         } else {
             coreDataManager.saveRecipe(currentRecipe)
+            delegate?.didAddFavorite(recipe: currentRecipe)
+            print("Recipe added to favorites: \(currentRecipe.label)")
         }
         isSaved.toggle()
         updateSaveButtonAppearance()
     }
+
+    private func getCurrentRecipe() -> Recipe? {
+        return recipe ?? (recipes.isEmpty ? nil : recipes[currentIndex])
+    }
     
     private func updateUI() {
-        let currentRecipe: Recipe
-        if let singleRecipe = recipe {
-            currentRecipe = singleRecipe
-        } else if !recipes.isEmpty && currentIndex >= 0 && currentIndex < recipes.count {
-            currentRecipe = recipes[currentIndex]
-        } else {
-            return
-        }
+        guard let currentRecipe = getCurrentRecipe() else { return }
 
         title = currentRecipe.label
         recipeTitleLabel.text = currentRecipe.label
         ingredientsTextView.text = currentRecipe.ingredientLines.joined(separator: "\n")
+        caloriesLabel.text = String(format: "Calories: %.1f", currentRecipe.calories)
 
         activityIndicator.startAnimating()
         recipeImageView.loadImage(from: currentRecipe.image) { [weak self] success in
@@ -158,18 +190,16 @@ class RecipeDetailViewController: UIViewController {
             }
         }
 
+        // Mettre à jour le bouton d'instructions
+        instructionsButton.isEnabled = !currentRecipe.url.isEmpty
+        instructionsButton.setTitle(currentRecipe.url.isEmpty ? "No Instructions Available" : "View Instructions", for: .normal)
+
         checkIfRecipeIsSaved()
     }
+
     
     private func checkIfRecipeIsSaved() {
-        let currentRecipe: Recipe
-        if let singleRecipe = recipe {
-            currentRecipe = singleRecipe
-        } else if !recipes.isEmpty && currentIndex >= 0 && currentIndex < recipes.count {
-            currentRecipe = recipes[currentIndex]
-        } else {
-            return
-        }
+        guard let currentRecipe = getCurrentRecipe() else { return }
         isSaved = coreDataManager.isRecipeSaved(currentRecipe)
         updateSaveButtonAppearance()
     }
@@ -178,12 +208,37 @@ class RecipeDetailViewController: UIViewController {
         let imageName = isSaved ? "heart.fill" : "heart"
         navigationItem.rightBarButtonItems?.first?.image = UIImage(systemName: imageName)
     }
+    
+    @objc private func openInstructions() {
+        print("openInstructions called")
+        
+        guard let currentRecipe = getCurrentRecipe() else {
+            print("No current recipe found")
+            return
+        }
+        
+        print("Recipe URL: \(currentRecipe.url)")
+        
+        guard let url = URL(string: currentRecipe.url) else {
+            print("Invalid URL: \(currentRecipe.url)")
+            return
+        }
+        
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true) {
+            print("Safari View Controller presented")
+        }
+    }
+
+
+
 }
 
 extension RecipeDetailViewController: CoreDataManagerDelegate {
     func didSaveRecipe(_ recipe: Recipe) {
         isSaved = true
         updateSaveButtonAppearance()
+        delegate?.didAddFavorite(recipe: recipe)
     }
     
     func didDeleteRecipe(_ recipe: Recipe) {
