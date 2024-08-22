@@ -13,6 +13,8 @@ class ModernTableViewCell: UITableViewCell {
     private func setupCell() {
         backgroundColor = .white
         layer.cornerRadius = 8
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.black.cgColor
         layer.masksToBounds = true
         contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44).isActive = true
         textLabel?.numberOfLines = 0
