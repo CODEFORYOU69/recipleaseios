@@ -23,6 +23,7 @@
 		3E4D14FB2C59308100A3835A /* ModernTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D14FA2C59308100A3835A /* ModernTableViewCell.swift */; };
 		3E7E9ACF2C779EF20067586F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E9ACE2C779EF20067586F /* LoadingView.swift */; };
 		3E7E9B252C8540C50067586F /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E7E9B242C8540C50067586F /* AlamofireImage */; };
+		3E7E9B272C8546B40067586F /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E7E9B262C8546B30067586F /* AlamofireImage */; };
 		3E87E31B2C56AA4300D843E2 /* UIColor+AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E87E31A2C56AA4300D843E2 /* UIColor+AppTheme.swift */; };
 		3E92FBEF2C208C4E00989B12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FBEE2C208C4E00989B12 /* AppDelegate.swift */; };
 		3E92FBF12C208C4E00989B12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FBF02C208C4E00989B12 /* SceneDelegate.swift */; };
@@ -91,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E7E9B272C8546B40067586F /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +226,9 @@
 				3E92FC062C208C4F00989B12 /* PBXTargetDependency */,
 			);
 			name = RecipleaseTests;
+			packageProductDependencies = (
+				3E7E9B262C8546B30067586F /* AlamofireImage */,
+			);
 			productName = RecipleaseTests;
 			productReference = 3E92FC042C208C4F00989B12 /* RecipleaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -480,6 +485,7 @@
 				DEVELOPMENT_TEAM = VRA2ZFJM88;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -509,6 +515,7 @@
 				DEVELOPMENT_TEAM = VRA2ZFJM88;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -619,6 +626,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		3E7E9B242C8540C50067586F /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E7E9B232C8540C50067586F /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		3E7E9B262C8546B30067586F /* AlamofireImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3E7E9B232C8540C50067586F /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;

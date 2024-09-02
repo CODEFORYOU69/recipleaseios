@@ -28,11 +28,13 @@ struct RecipeService {
     }
 
     func searchRecipes(with ingredients: [String], page: Int, completion: @escaping (Result<PaginatedRecipes, RecipeServiceError>) -> Void) {
+        
         let cacheKey = (ingredients.joined() + "\(page)") as NSString
         if let cachedResult = cache.object(forKey: cacheKey) as? PaginatedRecipes {
             completion(.success(cachedResult))
             return
         }
+
         
         guard var urlComponents = URLComponents(string: baseURL) else {
             completion(.failure(.invalidURL))
