@@ -125,7 +125,6 @@ class SearchViewController: UIViewController {
         ingredientsTableView.reloadData()
         ingredientTextField.text = ""
     }
-
     
     @IBAction func clearIngredients(_ sender: UIButton) {
         resetView()
