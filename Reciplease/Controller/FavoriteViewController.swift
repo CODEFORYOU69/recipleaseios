@@ -67,7 +67,6 @@ class FavoriteViewController: UIViewController {
                    }
                case .failure(let error):
                    print("Failed to load more recipes: \(error)")
-                   // Optionally show an error message to the user
                }
                
                DispatchQueue.main.async {

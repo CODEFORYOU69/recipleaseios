@@ -252,11 +252,9 @@ extension RecipeDetailViewController: CoreDataManagerDelegate {
     
     func didEncounterError(_ error: Error) {
         print("Error: \(error.localizedDescription)")
-        // Implement error handling, e.g., show an alert to the user
     }
     
     func didSaveContext() {
         print("Core Data context saved successfully")
-        // Vous pouvez ajouter ici toute logique supplémentaire nécessaire après une sauvegarde réussie
     }
 }

@@ -1,16 +1,8 @@
-//
-//  FavoriteRecipeCell.swift
-//  Reciplease
-//
-//  Created by younes ouasmi on 24/07/2024.
-//
-
 import UIKit
+import AlamofireImage
 
 class FavoriteRecipeCell: UITableViewCell {
     var favoriteButtonTapped: (() -> Void)?
-    static let imageCache = NSCache<NSString, UIImage>()
-
     
     private lazy var favoriteButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -19,11 +11,9 @@ class FavoriteRecipeCell: UITableViewCell {
         button.addTarget(self, action: #selector(favoriteButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityLabel = "Favorite"
-        button.accessibilityHint = "Double tap to toggle favorite status"
+        button.accessibilityHint = "tap to toggle favorite status"
         return button
     }()
-    
-    
     
     private let recipeImageView: UIImageView = {
         let imageView = UIImageView()
@@ -64,8 +54,6 @@ class FavoriteRecipeCell: UITableViewCell {
         setupAccessibility()
     }
     
-    
-    
     private func setupViews() {
         contentView.addSubview(recipeImageView)
         contentView.addSubview(titleLabel)
@@ -80,7 +68,6 @@ class FavoriteRecipeCell: UITableViewCell {
         contentView.layer.shadowOffset = CGSize(width: 0, height: 2) // Shadow offset for perspective
         contentView.layer.shadowRadius = 2
         contentView.layer.shadowOpacity = 0.2 // Shadow opacity
-        
 
         NSLayoutConstraint.activate([
             recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
@@ -104,38 +91,24 @@ class FavoriteRecipeCell: UITableViewCell {
         isAccessibilityElement = true
         accessibilityTraits = .button
         shouldGroupAccessibilityChildren = true
-        
-        favoriteButton.isAccessibilityElement = true
-        favoriteButton.accessibilityTraits = .button
     }
     
-    
-    
     func configure(with recipe: Recipe) {
-        print("Configuring cell with recipe: \(recipe.label)")
-
         titleLabel.text = recipe.label
-        recipeImageView.image = placeholderImage
-        
-        recipeImageView.loadImage(from: recipe.image) { [weak self] success in
-            if success {
-                print("Image loaded successfully for recipe: \(recipe.label)")
 
-                UIView.transition(with: self?.recipeImageView ?? UIImageView(),
-                                  duration: 0.3,
-                                  options: .transitionCrossDissolve,
-                                  animations: { self?.recipeImageView.image = self?.recipeImageView.image },
-                                  completion: nil)
-            } else {
-                print("Failed to load image for recipe: \(recipe.label)")
-            }
-            self?.updateAccessibilityLabel()
+        if let imageUrl = URL(string: recipe.image) {
+            recipeImageView.af.setImage(
+                withURL: imageUrl,
+                placeholderImage: placeholderImage,
+                imageTransition: .crossDissolve(0.3)
+            )
+        } else {
+            recipeImageView.image = placeholderImage
         }
         
         updateAccessibilityLabel()
     }
     
- 
     private func updateFavoriteStatus() {
         favoriteButton.isSelected = isFavorite
         favoriteButton.accessibilityLabel = isFavorite ? "Remove from favorites" : "Add to favorites"
@@ -146,46 +119,9 @@ class FavoriteRecipeCell: UITableViewCell {
         DispatchQueue.main.async {
             let favoriteStatus = self.isFavorite ? "Favorite recipe" : "Not in favorites"
             self.accessibilityLabel = "\(self.titleLabel.text ?? "Recipe"), \(favoriteStatus)"
-            self.accessibilityHint = "Double tap to view recipe details. Use the favorite button to change favorite status."
+            self.accessibilityHint = "tap to view recipe details. Use the favorite button to change favorite status."
         }
     }
-    
-    func loadImage(from urlString: String, completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: urlString) else {
-            completion(false)
-            return
-        }
-        
-        // Utiliser NSCache pour stocker les images déjà chargées
-        if let cachedImage = FavoriteRecipeCell.imageCache.object(forKey: urlString as NSString) {
-                    self.recipeImageView.image = cachedImage
-                    completion(true)
-                    return
-                }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let data = data, let image = UIImage(data: data) else {
-                DispatchQueue.main.async {
-                    completion(false)
-                }
-                return
-            }
-            
-            // Redimensionner l'image pour qu'elle corresponde à la taille de l'UIImageView
-            let resizedImage = image.resized(to: self?.bounds.size ?? CGSize(width: 100, height: 100))
-            
-            // Mettre en cache l'image redimensionnée
-            FavoriteRecipeCell.imageCache.setObject(resizedImage, forKey: urlString as NSString)
-
-            DispatchQueue.main.async {
-                self?.recipeImageView.image = resizedImage
-                completion(true)
-            }
-        }.resume()
-    }
-    
-    
-
     
     @objc private func favoriteButtonPressed() {
         favoriteButtonTapped?()
@@ -199,11 +135,3 @@ class FavoriteRecipeCell: UITableViewCell {
         updateAccessibilityLabel()
     }
 }
-extension UIImage {
-    func resized(to size: CGSize) -> UIImage {
-        return UIGraphicsImageRenderer(size: size).image { _ in
-            draw(in: CGRect(origin: .zero, size: size))
-        }
-    }
-}
-

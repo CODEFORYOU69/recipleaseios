@@ -306,7 +306,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    // Optionnel : Personnalisez le texte de l'action de suppression
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Delete"
     }

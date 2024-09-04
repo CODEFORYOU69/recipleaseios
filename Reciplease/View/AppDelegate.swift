@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Configuration de la NavigationBar
+        //  NavigationBar
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.backgroundColor = UIColor.lightGray.withAlphaComponent(0.8)
@@ -25,15 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         
-        // Configuration de la TabBar
+        // TabBar
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = UIColor.lightGray.withAlphaComponent(0.8)
         
-        // Configuration des éléments de la TabBar
+        // elements TabBar
         let tabBarItemAppearance = UITabBarItemAppearance()
         
-        // Configuration pour l'état normal (non sélectionné)
+        // state tabbar
         tabBarItemAppearance.normal.iconColor = .black
         tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
@@ -41,8 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarItemAppearance.selected.iconColor = .green
         tabBarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.green]
         
-        // Appliquer la configuration des éléments à l'apparence de la TabBar
-        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+        // applicate configuration at the tabbar elements
         tabBarAppearance.inlineLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.compactInlineLayoutAppearance = tabBarItemAppearance
         

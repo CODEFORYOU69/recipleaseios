@@ -22,8 +22,9 @@
 		3E4D14F92C58F9FA00A3835A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E4D14F82C58F9FA00A3835A /* LaunchScreen.storyboard */; };
 		3E4D14FB2C59308100A3835A /* ModernTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D14FA2C59308100A3835A /* ModernTableViewCell.swift */; };
 		3E7E9ACF2C779EF20067586F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E9ACE2C779EF20067586F /* LoadingView.swift */; };
-		3E7E9B252C8540C50067586F /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E7E9B242C8540C50067586F /* AlamofireImage */; };
 		3E7E9B272C8546B40067586F /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E7E9B262C8546B30067586F /* AlamofireImage */; };
+		3E7E9B2D2C854E8C0067586F /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E7E9B2C2C854E8C0067586F /* AlamofireImage */; };
+		3E7E9B2F2C854ECA0067586F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E7E9B2E2C854ECA0067586F /* Alamofire */; };
 		3E87E31B2C56AA4300D843E2 /* UIColor+AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E87E31A2C56AA4300D843E2 /* UIColor+AppTheme.swift */; };
 		3E92FBEF2C208C4E00989B12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FBEE2C208C4E00989B12 /* AppDelegate.swift */; };
 		3E92FBF12C208C4E00989B12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FBF02C208C4E00989B12 /* SceneDelegate.swift */; };
@@ -34,7 +35,6 @@
 		3E92FC272C2D6CE600989B12 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC262C2D6CE600989B12 /* SearchViewController.swift */; };
 		3E92FC292C2D6CFD00989B12 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC282C2D6CFD00989B12 /* FavoriteViewController.swift */; };
 		3E92FC2B2C2DA0B100989B12 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92FC2A2C2DA0B100989B12 /* RecipeService.swift */; };
-		3E92FC2E2C2DA73A00989B12 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E92FC2D2C2DA73A00989B12 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E92FC2E2C2DA73A00989B12 /* Alamofire in Frameworks */,
-				3E7E9B252C8540C50067586F /* AlamofireImage in Frameworks */,
+				3E7E9B2D2C854E8C0067586F /* AlamofireImage in Frameworks */,
+				3E7E9B2F2C854ECA0067586F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +205,8 @@
 			);
 			name = Reciplease;
 			packageProductDependencies = (
-				3E92FC2D2C2DA73A00989B12 /* Alamofire */,
-				3E7E9B242C8540C50067586F /* AlamofireImage */,
+				3E7E9B2C2C854E8C0067586F /* AlamofireImage */,
+				3E7E9B2E2C854ECA0067586F /* Alamofire */,
 			);
 			productName = Reciplease;
 			productReference = 3E92FBEB2C208C4E00989B12 /* Reciplease.app */;
@@ -625,17 +625,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3E7E9B242C8540C50067586F /* AlamofireImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3E7E9B232C8540C50067586F /* XCRemoteSwiftPackageReference "AlamofireImage" */;
-			productName = AlamofireImage;
-		};
 		3E7E9B262C8546B30067586F /* AlamofireImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3E7E9B232C8540C50067586F /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
 		};
-		3E92FC2D2C2DA73A00989B12 /* Alamofire */ = {
+		3E7E9B2C2C854E8C0067586F /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E7E9B232C8540C50067586F /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		3E7E9B2E2C854ECA0067586F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3E92FC2C2C2DA73A00989B12 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
