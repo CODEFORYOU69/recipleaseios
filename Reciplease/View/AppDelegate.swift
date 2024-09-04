@@ -41,7 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarItemAppearance.selected.iconColor = .green
         tabBarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.green]
         
-        // applicate configuration at the tabbar elements
+        // applicate configuration at the tabbar elements 
+        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.inlineLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.compactInlineLayoutAppearance = tabBarItemAppearance
         
