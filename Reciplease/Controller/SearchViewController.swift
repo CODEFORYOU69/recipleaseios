@@ -35,6 +35,7 @@ class SearchViewController: UIViewController {
         setupGestures()
         setupLoadingView()
 
+
     }
     
     // MARK: - Setup Methods
@@ -96,6 +97,7 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func searchRecipes(_ sender: UIButton) {
+        dismissKeyboard()
         currentPage = 1
         searchResults.removeAll()
         showLoading(true)
@@ -120,10 +122,12 @@ class SearchViewController: UIViewController {
         guard let ingredient = ingredientTextField.text, !ingredient.isEmpty else {
             return
         }
-        dismissKeyboard() // Assure-toi que le clavier est correctement fermé
+        dismissKeyboard()
         ingredients.append(ingredient)
         ingredientsTableView.reloadData()
         ingredientTextField.text = ""
+        ingredientTextField.resignFirstResponder() 
+
     }
     
     @IBAction func clearIngredients(_ sender: UIButton) {
@@ -200,6 +204,9 @@ class SearchViewController: UIViewController {
         ingredientTextField.autocorrectionType = .no
         ingredientTextField.spellCheckingType = .no
         ingredientTextField.smartInsertDeleteType = .no
+        ingredientTextField.smartQuotesType = .no
+            ingredientTextField.smartDashesType = .no
+            ingredientTextField.autocapitalizationType = .none
     }
 
 

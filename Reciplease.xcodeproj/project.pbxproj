@@ -282,8 +282,8 @@
 			files = (
 				3E4D14F92C58F9FA00A3835A /* LaunchScreen.storyboard in Resources */,
 				3E92FBFB2C208C4F00989B12 /* Assets.xcassets in Resources */,
-				3E92FBF62C208C4E00989B12 /* Base in Resources */,
 				3E0F20E72C7550BB002FA01B /* Main.storyboard in Resources */,
+				3E92FBF62C208C4E00989B12 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
